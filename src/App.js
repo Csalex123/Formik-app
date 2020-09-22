@@ -7,6 +7,7 @@ function App() {
 
     function onSubmit(values, actions) {
         console.log('SUBMIT', values);
+        actions.resetForm({ values: { name: "", email: "" } })
     }
 
     return (
@@ -27,7 +28,7 @@ function App() {
                             <Field name="email" type="email" />
                             <ErrorMessage name="email" />
                         </div>
-                        <button type="submit" disabled={isValid}>Enviar</button>
+                        <button type="submit" >Enviar</button>
                     </Form>
                 )} />
         </div>
