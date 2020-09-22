@@ -7,10 +7,15 @@ const Input = ({ label, name, id, ...restProps }) => {
     const [field, meta] = useField({ name, id, ...restProps });
     return (
         <>
-            {label && <label>{label}</label>}
-            <input name={name} id={id ?? name} {...field} />
-            {meta.error && (
-                <span className="input-error">{meta.error}</span>
+            {label && <label htmlFor={id ?? name} className="label">{label}</label>}
+            <input
+                className={`input ${meta.touched && meta.error && 'input--error'}`}
+                name={name}
+                id={id ?? name}
+                {...restProps}
+                {...field} />
+            { meta.touched && meta.error && (
+                <span className={`${meta.error && 'input-error'}`}>{meta.error}</span>
             )}
         </>
     );

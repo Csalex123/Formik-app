@@ -1,3 +1,20 @@
+.label{
+    display: block;
+    font-size: 14px;
+    margin: 10px 0 5px 0;
+}
+
+.input {
+    padding: 4px 0;
+}
+
+.input--error{
+    border: 1px solid red;
+}
+
 .input-error{
+    margin-top: 5px;
+    display: block;
     color: red;
 }
+

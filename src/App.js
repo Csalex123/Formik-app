@@ -17,15 +17,15 @@ function App() {
                 validationSchema={schema}
                 onSubmit={onSubmit}
                 initialValues={{ name: '', email: '' }}
-                render={({ values, touched, isValid }) => (
+                render={() => (
                     <Form>
                         <div>
-                            <Field label="Nome" name="name" type="text" />
+                            <Field label="Nome" id="name" name="name" type="text" placeholder="Digite o nome" />
                         </div>
                         <div>
-                            <Field label="Email" name="email" type="email" />
+                            <Field label="Email" id="email" name="email" type="email" placeholder="Digite o email" />
                         </div>
-                        <button type="submit" disabled={isValid} >Enviar</button>
+                        <button type="submit" >Enviar</button>
                     </Form>
                 )} />
         </div>
