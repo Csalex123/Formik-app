@@ -1,6 +1,7 @@
 import React from 'react';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Formik, Form, ErrorMessage } from 'formik';
 import schema from './schema';
+import Field from './shared/Input';
 
 
 function App() {
@@ -16,19 +17,15 @@ function App() {
                 validationSchema={schema}
                 onSubmit={onSubmit}
                 initialValues={{ name: '', email: '' }}
-                render={({ values, errors, touched, isValid }) => (
+                render={({ values, touched, isValid }) => (
                     <Form>
                         <div>
-                            <label>Nome:</label>
-                            <Field name="name" type="text" />
-                            <ErrorMessage style={{ color: 'red' }} name="name" />
+                            <Field label="Nome" name="name" type="text" />
                         </div>
                         <div>
-                            <label>Email:</label>
-                            <Field name="email" type="email" />
-                            <ErrorMessage name="email" />
+                            <Field label="Email" name="email" type="email" />
                         </div>
-                        <button type="submit" >Enviar</button>
+                        <button type="submit" disabled={isValid} >Enviar</button>
                     </Form>
                 )} />
         </div>
